@@ -1,0 +1,291 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: black;
+    color: white;
+}
+
+header{
+    width: 100%;
+    height: 33em;
+    background-color: black;
+}
+
+.contenedor-encabezado{
+    padding: 5em 10em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor-burbuja{
+    display: flex;
+    margin-bottom: 1.5em;
+}
+
+.burbuja{
+    background-color: black;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    border:solid 1px white
+}
+
+#certificado{
+    background-color: #feb904;
+    padding: 10px;
+    width: 6em;
+}
+
+#certificado p{
+    text-align: center;
+}
+
+h1{
+    font-size: 5.2em;
+    font-weight: bold;
+    margin: 0.4em 0;
+    color: white;
+}
+
+.contenedor-botones{
+    margin-top: 1em;
+    display: flex;
+    width: 50%;
+}
+
+a{
+    width: 100%;
+    height: auto;
+}
+
+
+.boton{
+    width: 90%;
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    background: none;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+#contenidos{
+    background-color: black;
+    border: solid 2px white;
+    color: white;
+}
+
+.divisor{
+    width: 100%;
+    height: 8px;
+    background-color: #feb904;
+}
+
+.contenedor-dirigido{
+    margin: 3em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.que-es{
+    width: 50%;
+}
+
+.dirigido{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.item{
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+.item p{
+    margin-left: 1em;
+}
+
+.check{
+    width: 5em;
+    height: 4em;
+    margin: 1em;
+    background-color: #feb904;
+    border-radius: 3em;
+}
+
+.check img{
+    width: 100%;
+    height: 100%;
+}
+
+#extra{
+    width: 13em;
+    margin: 0;
+    text-align: center;
+    margin: 1em 25%;
+}
+
+.que-es h2{
+    font-size: 4em;
+    margin: 0.5em 0;
+}
+
+#parrafo{
+    margin-right: 4em;
+}
+
+.contenedor-aprender{
+    width: 100%;
+    height: 39em;
+    display: flex;
+}
+
+.contenedor-info{
+    width: 50%;
+    height: 30em;
+    background-color: white;
+    margin: 2em;
+    padding: 2em;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow:2px 1px 10px gray;
+}
+
+.info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1em 3em;
+}
+
+.info img{
+    width: 3em;
+    height: 3em;
+}
+
+.info p{
+    width: 100%;
+    margin-left: 1em;
+    color: black;
+    font-weight: bold;
+}
+
+#programa{
+    background-color: black;
+    color: white;
+    margin: 0 25%;
+    width: 50%;
+}
+
+#informacion{
+    background-color: #feb904;
+    width: 20em;
+    margin: 0 15%;
+    text-align: center;
+    font-weight: bold;
+}
+
+#comunidad{
+    border: solid 3px #feb904;
+}
+
+.contenedor-pagos{
+    width: 100%;
+    height: 50em;
+    text-align: center;
+}
+
+.contenedor-pagos h3{
+    padding: 0.5em;
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+}
+
+#subtitulo{
+    text-align: center;
+    color: gray;
+}
+
+.carta-pago{
+    background-color: rgb(35, 35, 35);
+    margin: 2em 35%;
+    height: 28em;
+    border-radius: 20px;
+    padding: 2em;
+    text-align: left;
+    border: solid 2px white;
+}
+
+.oferta{
+    display: flex;
+    margin: 1em 0;
+}
+
+#descuento{
+    background-color: green;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#preciouno{
+    padding: 5px;
+    text-decoration: line-through;
+    color: gray;
+}
+
+#precioreal{
+    font-size: 3em;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+#ahora{
+    width: 100%;
+    margin-bottom: 1em;
+    background-color: #9f7305;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.beneficio{
+    display: flex;
+    align-items: center;
+    margin-top: 1em;
+    font-weight: bold;
+    color: white;
+}
+
+.beneficio p{
+    margin-left: 1em;
+}
+
+#unpago{
+    font-weight: bold;
+}
+
+.piedepagina{
+    background-color: black;
+    width: 100%;
+    height: 4em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.piedepagina p{
+    margin-left: 2em;
+}
