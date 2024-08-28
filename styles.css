@@ -19,6 +19,12 @@ header{
     justify-content: center;
 }
 
+@media (max-width: 480px){
+    .contenedor-encabezado{
+        padding: 1em;
+    }
+}
+
 .contenedor-burbuja{
     display: flex;
     margin-bottom: 1.5em;
@@ -53,6 +59,12 @@ h1{
     margin-top: 1em;
     display: flex;
     width: 50%;
+}
+
+@media (max-width: 480px){
+    .contenedor-botones{
+        width: 100%;
+    }
 }
 
 a{
@@ -91,8 +103,25 @@ a{
     justify-content: space-between;
 }
 
+@media(max-width: 480px){
+    .contenedor-dirigido{
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+    }
+}
+
+
 .que-es{
     width: 50%;
+}
+
+@media(max-width: 480px){
+    .que-es{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .dirigido{
@@ -100,6 +129,13 @@ a{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media(max-width: 480px){
+    .dirigido{
+        width: 100%;
+        margin-top: 3em;
+    }
 }
 
 .item{
@@ -147,6 +183,14 @@ a{
     display: flex;
 }
 
+@media(max-width: 480px){
+    .contenedor-aprender{
+        flex-direction: column;
+        height: 70em;
+        width: 100%;
+        padding: 0;
+    }
+}
 .contenedor-info{
     width: 50%;
     height: 30em;
@@ -158,6 +202,14 @@ a{
     flex-direction: column;
     justify-content: space-between;
     box-shadow:2px 1px 10px gray;
+}
+
+@media (max-width: 480px){
+    .contenedor-info{
+        width: 90%;
+        margin: 1em;
+        padding: 1em 0;
+    }
 }
 
 .info{
@@ -194,6 +246,13 @@ a{
     font-weight: bold;
 }
 
+@media (max-width: 480px){
+    #informacion{
+        width: 50%;
+        margin: 0 25%;
+    }
+}
+
 #comunidad{
     border: solid 3px #feb904;
 }
@@ -211,6 +270,12 @@ a{
     color: white;
 }
 
+@media (max-width: 480px){
+    .contenedor-pagos{
+        height: 53em;
+    }
+}
+
 #subtitulo{
     text-align: center;
     color: gray;
@@ -224,6 +289,12 @@ a{
     padding: 2em;
     text-align: left;
     border: solid 2px white;
+}
+
+@media(max-width: 480px){
+    .carta-pago{
+        margin: 1em;
+    }
 }
 
 .oferta{
@@ -288,4 +359,10 @@ a{
 
 .piedepagina p{
     margin-left: 2em;
+}
+
+@media(max-width: 480px){
+    #parrafo{
+        margin: 0;
+    }
 }
