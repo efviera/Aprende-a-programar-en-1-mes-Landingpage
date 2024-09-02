@@ -26,11 +26,26 @@ body{
     border: solid 3px white;
 }
 
+@media (max-width: 430px){
+    .exito{
+        height: 100%;
+        width: 90%;
+        margin: 2em;
+        margin-top: 4em;
+    }
+}
+
 .exito h1{
     font-size: 3em;
     margin: 1em 0 0.5em;
     font-weight: bold;
     color: white;
+}
+
+@media (max-width:430px){
+    .exito h1{
+        font-size: 1.5em;
+    }
 }
 
 .pagoexitoso{
@@ -56,9 +71,22 @@ body{
     font-size: 1.2em;
 }
 
+@media (max-width: 430px){
+    #mail{
+        margin: 1em;
+    }
+}
+
 #inicioClases{
     margin-top: 2em;
     font-weight: bold;
+}
+
+@media (max-width: 430px){
+    #inicioClases{
+        margin: 1em;
+        text-align: center;
+    }
 }
 
 #logo{
