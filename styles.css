@@ -469,3 +469,140 @@ a{
     font-size: 1.1em;
     font-weight: bold;
 }
+
+.contenedor-recursos-gratuitos{
+    display: flex;
+    width: 100%;
+    height: 35em;
+    margin: 3em 0;
+}
+
+@media (max-width: 430px){
+    .contenedor-recursos-gratuitos{
+        display: flex;
+        flex-direction: column;
+        height: 85em;
+    }
+}
+
+.contenedor-clase-gratis{
+    margin: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    height: 90%;
+}
+
+@media (max-width:430px){
+    .contenedor-clase-gratis{
+        width: 100%;
+        margin: 0.2em;
+    }
+}
+
+.contenedor-clase-gratis h3{
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    margin: 0 1em;
+}
+
+@media (max-width: 430px){
+    .contenedor-clase-gratis h3{
+        margin: 0.5em;
+    }
+}
+
+.contenedor-clase-gratis p{
+    margin: 0 1em;
+}
+
+.xx{
+    font-weight: bold;
+    color: white;
+}
+
+.x{
+    color: gray;
+}
+
+.xxx{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.parte{
+    width: 40%;
+    background-color: green;
+    padding: 0.5em;
+    border-radius: 20px;
+}
+
+.horaArgentina{
+    display: flex;
+}
+
+.horaArgentina img{
+    width: 1em;
+    height: 1em;
+}
+
+#botonGratis{
+    margin: 0 15%;
+    width: 30em;
+    background-color:#9f7305;
+    color: white;
+}
+
+@media (max-width: 430px){
+    #botonGratis{
+        background-color:#9f7305;
+        color: white;
+        margin: 0 25%;
+        width: 50%;
+    }
+}
+
+.contenedor-ebook{
+    margin: 1em 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+}
+
+@media (max-width: 430px){
+    .contenedor-ebook{
+        width: 100%;
+        margin: 0.5em;
+        text-align: center;
+    }
+}
+
+.contenedor-portadaEbook{
+    margin: 0.5em;
+    width: 100%;
+    height: 22em;
+    border-radius: 20px;
+}
+
+.contenedor-portadaEbook img{
+    width: 97%;
+    height: 100%;
+    border-radius: 20px;
+}
+
+.ebook{
+    font-size: 2em;
+    font-weight: bold;
+}
+
+
