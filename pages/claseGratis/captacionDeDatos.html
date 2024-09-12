@@ -29,32 +29,54 @@
         </form>
     </main>
     <script>
-        document.querySelector('.formulario').addEventListener('submit', function (event) {
-            event.preventDefault(); // Previene el envío normal del formulario
-    
-            // Captura los datos del formulario
-            const formData = new FormData(this);
-    
-            // URL del Google Apps Script para enviar los datos
-            const url = 'https://script.google.com/macros/s/AKfycbyDJ9FSKVU9oo3MehebgR28PU9XDqTblkofimx81JvWbWkjSYRCOTX13BcBx8bm6JZJTQ/exec';
-    
-            // Envía los datos al Google Apps Script
-            fetch(url, {
-                method: 'POST',
-                body: formData,
-            })
-                .then((response) => response.text())
-                .then((result) => {
-                    alert('Formulario enviado con éxito'); // Muestra un mensaje de éxito
-                    // Limpia los campos del formulario
-                    document.querySelector('.formulario').reset();
-                })
-                .catch((error) => {
-                    console.error('Error:', error); // Muestra errores en la consola
-                });
-        });
-    </script>
+        document.getElementById('enviar').addEventListener('click', function(event) {
+            event.preventDefault();
         
+            // Captura los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('Apellido').value;
+            const edad = document.getElementById('Edad').value;
+            const email = document.getElementById('Email').value;
+            const pais = document.getElementById('Pais').value;
+        
+            // Valida que todos los campos tengan datos
+            if (!nombre || !apellido || !edad || !email || !pais) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
+        
+            // Configura los datos a enviar
+            const data = {
+                nombre: nombre,
+                apellido: apellido,
+                edad: edad,
+                email: email,
+                pais: pais
+            };
+        
+            // Envía los datos al Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyDJ9FSKVU9oo3MehebgR28PU9XDqTblkofimx81JvWbWkjSYRCOTX13BcBx8bm6JZJTQ/exec', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json()) // Parsear la respuesta a JSON
+            .then(responseData => {
+                if (responseData.status === 'success') {
+                    alert('Formulario enviado con éxito. Revisa tu correo para más detalles.');
+                    document.querySelector('.formulario').reset();
+                } else {
+                    alert('Error al enviar el formulario: ' + responseData.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
+            });
+        });
+        </script>
         
 </body>
 </html>
