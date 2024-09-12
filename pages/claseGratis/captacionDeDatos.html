@@ -29,52 +29,57 @@
         </form>
     </main>
     <script>
-        document.getElementById('enviar').addEventListener('click', function(event) {
-            event.preventDefault();
+    document.getElementById('enviar').addEventListener('click', function(event) {
+        event.preventDefault();
         
-            // Captura los valores del formulario
-            const nombre = document.getElementById('nombre').value;
-            const apellido = document.getElementById('Apellido').value;
-            const edad = document.getElementById('Edad').value;
-            const email = document.getElementById('Email').value;
-            const pais = document.getElementById('Pais').value;
+        // Captura los valores del formulario
+        const nombre = document.getElementById('nombre').value;
+        const apellido = document.getElementById('Apellido').value;
+        const edad = document.getElementById('Edad').value;
+        const email = document.getElementById('Email').value;
+        const pais = document.getElementById('Pais').value;
         
-            // Valida que todos los campos tengan datos
-            if (!nombre || !apellido || !edad || !email || !pais) {
-                alert('Por favor completa todos los campos.');
-                return;
+        // Valida que todos los campos tengan datos
+        if (!nombre || !apellido || !edad || !email || !pais) {
+            alert('Por favor completa todos los campos.');
+            return;
+        }
+        
+        // Configura los datos a enviar
+        const data = {
+            nombre: nombre,
+            apellido: apellido,
+            edad: edad,
+            email: email,
+            pais: pais
+        };
+        
+        // Envía los datos al Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbxFUimhOOL3csg8RKWBknd7XhrllBL0sYZT_423qFYvC0NP-SNbcFX1bqdTiIESFoKe/exec', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
             }
-        
-            // Configura los datos a enviar
-            const data = {
-                nombre: nombre,
-                apellido: apellido,
-                edad: edad,
-                email: email,
-                pais: pais
-            };
-        
-            // Envía los datos al Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbxFUimhOOL3csg8RKWBknd7XhrllBL0sYZT_423qFYvC0NP-SNbcFX1bqdTiIESFoKe/exec', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => response.json()) // Parsear la respuesta a JSON
-            .then(responseData => {
-                if (responseData.status === 'success') {
-                    alert('Formulario enviado con éxito. Revisa tu correo para más detalles.');
-                } else {
-                    alert('Error al enviar el formulario: ' + responseData.message);
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
-            });
+            return response.json();
+        })
+        .then(responseData => {
+            if (responseData.status === 'success') {
+                alert('Formulario enviado con éxito. Revisa tu correo para más detalles.');
+            } else {
+                alert('Error al enviar el formulario: ' + responseData.message);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
         });
-        </script> 
+    });
+</script>    
 </body>
 </html>
