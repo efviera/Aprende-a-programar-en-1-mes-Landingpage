@@ -55,7 +55,7 @@
             };
         
             // Envía los datos al Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbzSwA56KpBFXjSNdU6r-IYFU-KlqQKfeKUcyym8cZtVMFRfVAeebWNXdqKQsLnaynj8XQ/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbxupFSL4QXqf1jHKUchHGnwIvD-ffO75fNT5sPhz72Qx2o5qDSr8L8c3UJ4vM-mtZZL/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -66,7 +66,6 @@
             .then(responseData => {
                 if (responseData.status === 'success') {
                     alert('Formulario enviado con éxito. Revisa tu correo para más detalles.');
-                    document.querySelector('.formulario').reset();
                 } else {
                     alert('Error al enviar el formulario: ' + responseData.message);
                 }
@@ -75,8 +74,8 @@
                 console.error('Error:', error);
                 alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
             });
+            document.getElementById('formulario').reset();
         });
-        </script>
-        
+        </script> 
 </body>
 </html>
