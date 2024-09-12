@@ -55,23 +55,27 @@
             };
         
             // Envía los datos al Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbyDJ9FSKVU9oo3MehebgR28PU9XDqTblkofimx81JvWbWkjSYRCOTX13BcBx8bm6JZJTQ/exec', { // Reemplaza con la URL del Web App de Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyDJ9FSKVU9oo3MehebgR28PU9XDqTblkofimx81JvWbWkjSYRCOTX13BcBx8bm6JZJTQ/exec', {
                 method: 'POST',
-                mode: 'no-cors',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(data)
             })
-            .then(response => {
-                alert('Formulario enviado con éxito. Revisa tu correo para más detalles.');
+            .then(response => response.json()) // Parsear la respuesta a JSON
+            .then(responseData => {
+                if (responseData.status === 'success') {
+                    alert('Formulario enviado con éxito. Revisa tu correo para más detalles.');
+                } else {
+                    alert('Error al enviar el formulario: ' + responseData.message);
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
                 alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
             });
         });
-        </script>
+        </script>        
         
 </body>
 </html>
