@@ -1,0 +1,149 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.contenedorVideos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten */
+}
+
+.contenedorVideos video {
+    height: 30em;
+}
+
+#computadora {
+    width: 65%;
+}
+
+#telefono {
+    width: 35%;
+}
+
+.explicacion {
+    width: 100%;
+    margin: 3em 0;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.explicacion p {
+    margin: 0 8em;
+}
+
+.contenedorFormulario {
+    width: 100%;
+    height: 30em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(100, 100, 100);
+    width: 40%;
+    height: 90%;
+    border-radius: 15px;
+}
+
+.formulario input {
+    width: 30em;
+    margin: 1em 0;
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#enviar {
+    width: 25em;
+    height: 3em;
+    border: none;
+    border-radius: 10px;
+    background-color: #feb904;
+    text-align: center;
+    font-weight: bold;
+    margin: 1em 0;
+    cursor: pointer;
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 2em;
+    }
+
+    .contenedorVideos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contenedorVideos video {
+        width: 90%; /* Ajusta el ancho de los videos para pantallas pequeñas */
+        height: auto; /* Ajusta la altura automáticamente */
+        margin-bottom: 1em;
+    }
+
+    .explicacion p {
+        margin: 0 2em; /* Reduce el margen para pantallas pequeñas */
+    }
+
+    .formulario {
+        width: 80%; /* Ajusta el ancho del formulario */
+        height: auto; /* Permite que el formulario crezca con su contenido */
+        padding: 1em; /* Añade un poco de padding */
+    }
+
+    .formulario input, #enviar {
+        width: 90%; /* Ajusta el ancho de los inputs y botón */
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 1.5em;
+    }
+
+    .contenedorFormulario {
+        height: auto;
+        padding: 1em;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .formulario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formulario input, #enviar {
+        width: 95%; /* Maximiza el ancho de los inputs en pantallas muy pequeñas */
+    }
+}

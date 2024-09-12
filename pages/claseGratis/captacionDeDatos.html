@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/captacionDeDatos.css">
+    <title>Inscribete | Clase Gratis</title>
+</head>
+<body>
+    <header>
+        <h1>Aprende a desarrollar una Landing page</h1>
+        <h2>¡Gratis!</h2>
+    </header>
+    <section class="contenedorVideos">
+        <video src="../../assets/videoCompputadora.mp4" autoplay loop muted playsinline id="computadora"></video>
+        <video src="../../assets/videoTelefono.mp4" autoplay loop muted playsinline id="telefono"></video>
+    </section>
+    <section class="explicacion">
+        <p>¿Quieres aprender a desarrollar una landing page cómo esta? Completa el formulario y accedé a nuestra clase ¡Gratis!</p>
+    </section>
+    <main class="contenedorFormulario">
+        <form class="formulario">  
+            <input type="text" id="nombre" placeholder="Nombre">
+            <input type="text" id="Apellido" placeholder="Apellido">
+            <input type="text" id="Edad" placeholder="Edad">
+            <input type="text" id="Email" placeholder="Email">
+            <input type="text" id="Pais" placeholder="País">
+            <button id="enviar">Enviar</button>
+        </form>
+    </main>
+    <script>
+        document.getElementById('enviar').addEventListener('click', function(event) {
+            event.preventDefault();
+        
+            // Captura los valores del formulario
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('Apellido').value;
+            const edad = document.getElementById('Edad').value;
+            const email = document.getElementById('Email').value;
+            const pais = document.getElementById('Pais').value;
+        
+            // Valida que todos los campos tengan datos
+            if (!nombre || !apellido || !edad || !email || !pais) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
+        
+            // Configura los datos a enviar
+            const data = {
+                nombre: nombre,
+                apellido: apellido,
+                edad: edad,
+                email: email,
+                pais: pais
+            };
+        
+            // Envía los datos al Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbyDJ9FSKVU9oo3MehebgR28PU9XDqTblkofimx81JvWbWkjSYRCOTX13BcBx8bm6JZJTQ/exec', { // Reemplaza con la URL del Web App de Google Apps Script
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                alert('Formulario enviado con éxito. Revisa tu correo para más detalles.');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
+            });
+        });
+        </script>
+        
+</body>
+</html>
