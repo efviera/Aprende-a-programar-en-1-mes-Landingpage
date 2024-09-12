@@ -55,7 +55,7 @@
             };
         
             // Envía los datos al Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbxupFSL4QXqf1jHKUchHGnwIvD-ffO75fNT5sPhz72Qx2o5qDSr8L8c3UJ4vM-mtZZL/exec', {
+            fetch('https://script.google.com/macros/s/AKfycby5YLdhfInHNnwkGqaU_GqLYpccE9UWqYVgkor6to9BRPS-s_ulcxai0uQ02fAB-aJK/exec', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -74,7 +74,6 @@
                 console.error('Error:', error);
                 alert('Hubo un error al enviar el formulario. Inténtalo de nuevo.');
             });
-            document.getElementById('formulario').reset();
         });
         </script> 
 </body>
